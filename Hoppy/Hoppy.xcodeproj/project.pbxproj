@@ -1,0 +1,800 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		445465F1E510A0DD94E2F033 /* Pods_Hoppy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E089667148D0619ED0A5A687 /* Pods_Hoppy.framework */; };
+		9AC01C6442FEACA59B239D36 /* Pods_HoppyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9353B7E94DC58FE52C4A1100 /* Pods_HoppyTests.framework */; };
+		E15463BBA2C1380954A98AF5 /* Pods_Hoppy_HoppyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92998C21DFBB034E384DD63E /* Pods_Hoppy_HoppyUITests.framework */; };
+		FA215D2128D0600A0086A6BB /* HomeViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA215D1D28D0600A0086A6BB /* HomeViewCollectionCell.swift */; };
+		FA215D2228D0600A0086A6BB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA215D1E28D0600A0086A6BB /* HomeViewController.swift */; };
+		FA215D2328D0600A0086A6BB /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA215D1F28D0600A0086A6BB /* SideMenuViewController.swift */; };
+		FA215D2428D0600A0086A6BB /* SideMenuViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA215D2028D0600A0086A6BB /* SideMenuViewTableCell.swift */; };
+		FAD08F7428D05E70009C4C8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08F7328D05E70009C4C8F /* AppDelegate.swift */; };
+		FAD08F7628D05E70009C4C8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08F7528D05E70009C4C8F /* SceneDelegate.swift */; };
+		FAD08F7E28D05E70009C4C8F /* Hoppy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAD08F7C28D05E70009C4C8F /* Hoppy.xcdatamodeld */; };
+		FAD08F8028D05E71009C4C8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD08F7F28D05E71009C4C8F /* Assets.xcassets */; };
+		FAD08F8328D05E71009C4C8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD08F8128D05E71009C4C8F /* LaunchScreen.storyboard */; };
+		FAD08F8E28D05E71009C4C8F /* HoppyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08F8D28D05E71009C4C8F /* HoppyTests.swift */; };
+		FAD08F9828D05E71009C4C8F /* HoppyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08F9728D05E71009C4C8F /* HoppyUITests.swift */; };
+		FAD08F9A28D05E71009C4C8F /* HoppyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08F9928D05E71009C4C8F /* HoppyUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAD08F8A28D05E71009C4C8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD08F6828D05E70009C4C8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAD08F6F28D05E70009C4C8F;
+			remoteInfo = Hoppy;
+		};
+		FAD08F9428D05E71009C4C8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD08F6828D05E70009C4C8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAD08F6F28D05E70009C4C8F;
+			remoteInfo = Hoppy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		346BEF87B314765497D44025 /* Pods-HoppyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoppyTests.debug.xcconfig"; path = "Target Support Files/Pods-HoppyTests/Pods-HoppyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3FD5AED1842D761E99DA3C1E /* Pods-Hoppy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoppy.release.xcconfig"; path = "Target Support Files/Pods-Hoppy/Pods-Hoppy.release.xcconfig"; sourceTree = "<group>"; };
+		411679EEE5315E9BA54AE302 /* Pods-Hoppy-HoppyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoppy-HoppyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Hoppy-HoppyUITests/Pods-Hoppy-HoppyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		721A096900F3C4EFA67D520F /* Pods-HoppyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoppyTests.release.xcconfig"; path = "Target Support Files/Pods-HoppyTests/Pods-HoppyTests.release.xcconfig"; sourceTree = "<group>"; };
+		8CFC3A0C4F7EDF6665425CC4 /* Pods-Hoppy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoppy.debug.xcconfig"; path = "Target Support Files/Pods-Hoppy/Pods-Hoppy.debug.xcconfig"; sourceTree = "<group>"; };
+		92998C21DFBB034E384DD63E /* Pods_Hoppy_HoppyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hoppy_HoppyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9353B7E94DC58FE52C4A1100 /* Pods_HoppyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoppyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA89C08E51F9C10853C979C8 /* Pods-Hoppy-HoppyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoppy-HoppyUITests.release.xcconfig"; path = "Target Support Files/Pods-Hoppy-HoppyUITests/Pods-Hoppy-HoppyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E089667148D0619ED0A5A687 /* Pods_Hoppy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hoppy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA215D1D28D0600A0086A6BB /* HomeViewCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCollectionCell.swift; sourceTree = "<group>"; };
+		FA215D1E28D0600A0086A6BB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FA215D1F28D0600A0086A6BB /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		FA215D2028D0600A0086A6BB /* SideMenuViewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewTableCell.swift; sourceTree = "<group>"; };
+		FAD08F7028D05E70009C4C8F /* Hoppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoppy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD08F7328D05E70009C4C8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAD08F7528D05E70009C4C8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FAD08F7D28D05E70009C4C8F /* Hoppy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hoppy.xcdatamodel; sourceTree = "<group>"; };
+		FAD08F7F28D05E71009C4C8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FAD08F8228D05E71009C4C8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FAD08F8428D05E71009C4C8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAD08F8928D05E71009C4C8F /* HoppyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoppyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD08F8D28D05E71009C4C8F /* HoppyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoppyTests.swift; sourceTree = "<group>"; };
+		FAD08F9328D05E71009C4C8F /* HoppyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoppyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD08F9728D05E71009C4C8F /* HoppyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoppyUITests.swift; sourceTree = "<group>"; };
+		FAD08F9928D05E71009C4C8F /* HoppyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoppyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAD08F6D28D05E70009C4C8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				445465F1E510A0DD94E2F033 /* Pods_Hoppy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD08F8628D05E71009C4C8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AC01C6442FEACA59B239D36 /* Pods_HoppyTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD08F9028D05E71009C4C8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E15463BBA2C1380954A98AF5 /* Pods_Hoppy_HoppyUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FD05810F9CC73B8CE3E70A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CFC3A0C4F7EDF6665425CC4 /* Pods-Hoppy.debug.xcconfig */,
+				3FD5AED1842D761E99DA3C1E /* Pods-Hoppy.release.xcconfig */,
+				411679EEE5315E9BA54AE302 /* Pods-Hoppy-HoppyUITests.debug.xcconfig */,
+				AA89C08E51F9C10853C979C8 /* Pods-Hoppy-HoppyUITests.release.xcconfig */,
+				346BEF87B314765497D44025 /* Pods-HoppyTests.debug.xcconfig */,
+				721A096900F3C4EFA67D520F /* Pods-HoppyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F71E49E1BF5ABF6DC7ABAA12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E089667148D0619ED0A5A687 /* Pods_Hoppy.framework */,
+				92998C21DFBB034E384DD63E /* Pods_Hoppy_HoppyUITests.framework */,
+				9353B7E94DC58FE52C4A1100 /* Pods_HoppyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA215D2528D060100086A6BB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA215D1E28D0600A0086A6BB /* HomeViewController.swift */,
+				FA215D1F28D0600A0086A6BB /* SideMenuViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FA215D2628D060230086A6BB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA215D1D28D0600A0086A6BB /* HomeViewCollectionCell.swift */,
+				FA215D2028D0600A0086A6BB /* SideMenuViewTableCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FA215D2928D060370086A6BB /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FAD08F7328D05E70009C4C8F /* AppDelegate.swift */,
+				FAD08F7528D05E70009C4C8F /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		FAD08F6728D05E70009C4C8F = {
+			isa = PBXGroup;
+			children = (
+				FAD08F7228D05E70009C4C8F /* Hoppy */,
+				FAD08F8C28D05E71009C4C8F /* HoppyTests */,
+				FAD08F9628D05E71009C4C8F /* HoppyUITests */,
+				FAD08F7128D05E70009C4C8F /* Products */,
+				3FD05810F9CC73B8CE3E70A5 /* Pods */,
+				F71E49E1BF5ABF6DC7ABAA12 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FAD08F7128D05E70009C4C8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAD08F7028D05E70009C4C8F /* Hoppy.app */,
+				FAD08F8928D05E71009C4C8F /* HoppyTests.xctest */,
+				FAD08F9328D05E71009C4C8F /* HoppyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAD08F7228D05E70009C4C8F /* Hoppy */ = {
+			isa = PBXGroup;
+			children = (
+				FA215D2928D060370086A6BB /* Delegate */,
+				FA215D2628D060230086A6BB /* Cell */,
+				FA215D2528D060100086A6BB /* ViewController */,
+				FAD08F7F28D05E71009C4C8F /* Assets.xcassets */,
+				FAD08F8128D05E71009C4C8F /* LaunchScreen.storyboard */,
+				FAD08F8428D05E71009C4C8F /* Info.plist */,
+				FAD08F7C28D05E70009C4C8F /* Hoppy.xcdatamodeld */,
+			);
+			path = Hoppy;
+			sourceTree = "<group>";
+		};
+		FAD08F8C28D05E71009C4C8F /* HoppyTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAD08F8D28D05E71009C4C8F /* HoppyTests.swift */,
+			);
+			path = HoppyTests;
+			sourceTree = "<group>";
+		};
+		FAD08F9628D05E71009C4C8F /* HoppyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FAD08F9728D05E71009C4C8F /* HoppyUITests.swift */,
+				FAD08F9928D05E71009C4C8F /* HoppyUITestsLaunchTests.swift */,
+			);
+			path = HoppyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAD08F6F28D05E70009C4C8F /* Hoppy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAD08F9D28D05E71009C4C8F /* Build configuration list for PBXNativeTarget "Hoppy" */;
+			buildPhases = (
+				925A25EBD5D21CE26AAE8C2D /* [CP] Check Pods Manifest.lock */,
+				FAD08F6C28D05E70009C4C8F /* Sources */,
+				FAD08F6D28D05E70009C4C8F /* Frameworks */,
+				FAD08F6E28D05E70009C4C8F /* Resources */,
+				CBB07CE154417B0E3E226D15 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hoppy;
+			productName = Hoppy;
+			productReference = FAD08F7028D05E70009C4C8F /* Hoppy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAD08F8828D05E71009C4C8F /* HoppyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAD08FA028D05E71009C4C8F /* Build configuration list for PBXNativeTarget "HoppyTests" */;
+			buildPhases = (
+				A8BEAAB8445759449A349521 /* [CP] Check Pods Manifest.lock */,
+				FAD08F8528D05E71009C4C8F /* Sources */,
+				FAD08F8628D05E71009C4C8F /* Frameworks */,
+				FAD08F8728D05E71009C4C8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAD08F8B28D05E71009C4C8F /* PBXTargetDependency */,
+			);
+			name = HoppyTests;
+			productName = HoppyTests;
+			productReference = FAD08F8928D05E71009C4C8F /* HoppyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FAD08F9228D05E71009C4C8F /* HoppyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAD08FA328D05E71009C4C8F /* Build configuration list for PBXNativeTarget "HoppyUITests" */;
+			buildPhases = (
+				A226C9928C119375C7EF69F8 /* [CP] Check Pods Manifest.lock */,
+				FAD08F8F28D05E71009C4C8F /* Sources */,
+				FAD08F9028D05E71009C4C8F /* Frameworks */,
+				FAD08F9128D05E71009C4C8F /* Resources */,
+				D1D27618B8FF01FDBE2B1BB6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAD08F9528D05E71009C4C8F /* PBXTargetDependency */,
+			);
+			name = HoppyUITests;
+			productName = HoppyUITests;
+			productReference = FAD08F9328D05E71009C4C8F /* HoppyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAD08F6828D05E70009C4C8F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					FAD08F6F28D05E70009C4C8F = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					FAD08F8828D05E71009C4C8F = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = FAD08F6F28D05E70009C4C8F;
+					};
+					FAD08F9228D05E71009C4C8F = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = FAD08F6F28D05E70009C4C8F;
+					};
+				};
+			};
+			buildConfigurationList = FAD08F6B28D05E70009C4C8F /* Build configuration list for PBXProject "Hoppy" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAD08F6728D05E70009C4C8F;
+			productRefGroup = FAD08F7128D05E70009C4C8F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAD08F6F28D05E70009C4C8F /* Hoppy */,
+				FAD08F8828D05E71009C4C8F /* HoppyTests */,
+				FAD08F9228D05E71009C4C8F /* HoppyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAD08F6E28D05E70009C4C8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAD08F8328D05E71009C4C8F /* LaunchScreen.storyboard in Resources */,
+				FAD08F8028D05E71009C4C8F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD08F8728D05E71009C4C8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD08F9128D05E71009C4C8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		925A25EBD5D21CE26AAE8C2D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hoppy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A226C9928C119375C7EF69F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hoppy-HoppyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8BEAAB8445759449A349521 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HoppyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBB07CE154417B0E3E226D15 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hoppy/Pods-Hoppy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hoppy/Pods-Hoppy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hoppy/Pods-Hoppy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1D27618B8FF01FDBE2B1BB6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hoppy-HoppyUITests/Pods-Hoppy-HoppyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hoppy-HoppyUITests/Pods-Hoppy-HoppyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hoppy-HoppyUITests/Pods-Hoppy-HoppyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAD08F6C28D05E70009C4C8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA215D2228D0600A0086A6BB /* HomeViewController.swift in Sources */,
+				FAD08F7428D05E70009C4C8F /* AppDelegate.swift in Sources */,
+				FAD08F7E28D05E70009C4C8F /* Hoppy.xcdatamodeld in Sources */,
+				FAD08F7628D05E70009C4C8F /* SceneDelegate.swift in Sources */,
+				FA215D2428D0600A0086A6BB /* SideMenuViewTableCell.swift in Sources */,
+				FA215D2328D0600A0086A6BB /* SideMenuViewController.swift in Sources */,
+				FA215D2128D0600A0086A6BB /* HomeViewCollectionCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD08F8528D05E71009C4C8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAD08F8E28D05E71009C4C8F /* HoppyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD08F8F28D05E71009C4C8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAD08F9828D05E71009C4C8F /* HoppyUITests.swift in Sources */,
+				FAD08F9A28D05E71009C4C8F /* HoppyUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAD08F8B28D05E71009C4C8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAD08F6F28D05E70009C4C8F /* Hoppy */;
+			targetProxy = FAD08F8A28D05E71009C4C8F /* PBXContainerItemProxy */;
+		};
+		FAD08F9528D05E71009C4C8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAD08F6F28D05E70009C4C8F /* Hoppy */;
+			targetProxy = FAD08F9428D05E71009C4C8F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FAD08F8128D05E71009C4C8F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAD08F8228D05E71009C4C8F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAD08F9B28D05E71009C4C8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FAD08F9C28D05E71009C4C8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAD08F9E28D05E71009C4C8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CFC3A0C4F7EDF6665425CC4 /* Pods-Hoppy.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6578S57CDT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hoppy/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Jaehyeoklim.Hoppy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAD08F9F28D05E71009C4C8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FD5AED1842D761E99DA3C1E /* Pods-Hoppy.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6578S57CDT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hoppy/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Jaehyeoklim.Hoppy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FAD08FA128D05E71009C4C8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 346BEF87B314765497D44025 /* Pods-HoppyTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6578S57CDT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Jaehyeoklim.HoppyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hoppy.app/Hoppy";
+			};
+			name = Debug;
+		};
+		FAD08FA228D05E71009C4C8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 721A096900F3C4EFA67D520F /* Pods-HoppyTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6578S57CDT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Jaehyeoklim.HoppyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hoppy.app/Hoppy";
+			};
+			name = Release;
+		};
+		FAD08FA428D05E71009C4C8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 411679EEE5315E9BA54AE302 /* Pods-Hoppy-HoppyUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6578S57CDT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Jaehyeoklim.HoppyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Hoppy;
+			};
+			name = Debug;
+		};
+		FAD08FA528D05E71009C4C8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA89C08E51F9C10853C979C8 /* Pods-Hoppy-HoppyUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6578S57CDT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Jaehyeoklim.HoppyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Hoppy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAD08F6B28D05E70009C4C8F /* Build configuration list for PBXProject "Hoppy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAD08F9B28D05E71009C4C8F /* Debug */,
+				FAD08F9C28D05E71009C4C8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAD08F9D28D05E71009C4C8F /* Build configuration list for PBXNativeTarget "Hoppy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAD08F9E28D05E71009C4C8F /* Debug */,
+				FAD08F9F28D05E71009C4C8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAD08FA028D05E71009C4C8F /* Build configuration list for PBXNativeTarget "HoppyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAD08FA128D05E71009C4C8F /* Debug */,
+				FAD08FA228D05E71009C4C8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAD08FA328D05E71009C4C8F /* Build configuration list for PBXNativeTarget "HoppyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAD08FA428D05E71009C4C8F /* Debug */,
+				FAD08FA528D05E71009C4C8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FAD08F7C28D05E70009C4C8F /* Hoppy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FAD08F7D28D05E70009C4C8F /* Hoppy.xcdatamodel */,
+			);
+			currentVersion = FAD08F7D28D05E70009C4C8F /* Hoppy.xcdatamodel */;
+			path = Hoppy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FAD08F6828D05E70009C4C8F /* Project object */;
+}

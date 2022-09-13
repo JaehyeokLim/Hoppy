@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Hoppy' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Hoppy
+  pod 'SnapKit', '~>5.6.0'
+  pod 'SideMenu'
+  target 'HoppyTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'HoppyUITests' do
+    # Pods for testing
+  end
+
+end
