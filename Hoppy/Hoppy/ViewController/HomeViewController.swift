@@ -19,10 +19,11 @@ public extension UIColor {
     static let hobbyCellBackgroundColor = UIColor(named: "HobbyCellBackgroundColor")
     static let hobbyCellInsideTextColor = UIColor(named: "HobbyCellInsideTextColor")
     static let hobbyCellInsideButtonColor = UIColor(named: "HobbyCellInsideButtonColor")
+    static let contentViewBackgroundColor = UIColor(named: "ContentVIewBackgroundColor")
 }
 
-var logoImageList: [UIImage] = []
-var logoTitleList: [String] = ["운동", "공예", "음악", "일상", "음식", "일상"]
+public var logoImageList: [UIImage] = []
+public var logoTitleList: [String] = ["운동", "공예", "음악", "일상", "음식", "일상"]
 
 import UIKit
 import SnapKit
@@ -62,11 +63,11 @@ class HomeViewController: UIViewController {
         button.setImage(UIImage(systemName: "list.bullet"), for: .normal)
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
-//        button.layer.borderWidth = 1
-//        button.layer.borderColor = UIColor.sideMenuButtonColor?.cgColor
-//        button.layer.borderColor = UIColor.white.cgColor
-//        button.layer.cornerRadius = 5
-        button.tintColor = UIColor.white
+        button.layer.borderWidth = 1
+        button.tintColor = UIColor.alarmButtonColor
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.cornerRadius = 5
+//        button.tintColor = UIColor.white
         
         return button
     }()
@@ -78,8 +79,8 @@ class HomeViewController: UIViewController {
         button.setImage(UIImage(systemName: "bell"), for: .normal)
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
-//        button.tintColor = UIColor.alarmButtonColor
-        button.tintColor = UIColor.white
+        button.tintColor = UIColor.alarmButtonColor
+//        button.tintColor = UIColor.white
         
         return button
     }()
@@ -87,7 +88,7 @@ class HomeViewController: UIViewController {
     private let homeViewScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         
-        scrollView.backgroundColor = UIColor.white
+        scrollView.backgroundColor = UIColor.contentViewBackgroundColor
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.showsVerticalScrollIndicator = false
 
@@ -97,6 +98,7 @@ class HomeViewController: UIViewController {
     private let contentView: UIView = {
         let view = UIView()
         
+        view.backgroundColor = UIColor.contentViewBackgroundColor
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -109,8 +111,8 @@ class HomeViewController: UIViewController {
         textField.layer.borderColor = UIColor.searchWindowColor?.cgColor
         textField.layer.cornerRadius = 4
         textField.textAlignment = .center
-        textField.backgroundColor = UIColor.white
-//        textField.placeholder =
+        textField.backgroundColor = UIColor.contentViewBackgroundColor
+        textField.placeholder = "찾으시는 취미를 검색해보세요!"
         
         return textField
     }()
@@ -157,7 +159,7 @@ class HomeViewController: UIViewController {
         label.text = ""
         label.layer.borderWidth = 1
 //        label.layer.borderColor = UIColor.horizonLineColor?.cgColor
-        label.layer.borderColor = UIColor.homeViewBackgroundColor?.cgColor
+        label.layer.borderColor = UIColor.searchWindowColor?.cgColor
         
         return label
     }()
@@ -300,7 +302,7 @@ class HomeViewController: UIViewController {
     }
 
     private func HomeViewLayout() {
-        view.backgroundColor = UIColor.homeViewBackgroundColor
+        view.backgroundColor = UIColor.white
         
         superViewList = [homeViewlogoImageButton, homeViewSideMenuImageButton, homeViewAlramImageButton, homeViewScrollView, horizonLine]
         
@@ -309,26 +311,26 @@ class HomeViewController: UIViewController {
         }
         
         homeViewlogoImageButton.snp.makeConstraints { make in
-            make.top.equalTo(view).offset(40)
-            make.leading.equalTo(view).offset(82)
-            make.size.equalTo(CGSize(width: 230, height: 100))
+            make.top.equalTo(view).offset(35)
+            make.leading.equalTo(view).offset(112)
+            make.size.equalTo(CGSize(width: 170, height: 90))
         }
         
         homeViewSideMenuImageButton.snp.makeConstraints { make in
-            make.top.equalTo(view).offset(75)
-            make.leading.equalTo(view).offset(15)
+            make.top.equalTo(view).offset(68)
+            make.leading.equalTo(view).offset(20)
 //            make.size.equalTo(CGSize(width: 35, height: 35))
-            make.size.equalTo(CGSize(width: 45, height: 35))
+            make.size.equalTo(CGSize(width: 35, height: 28))
         }
         
         homeViewAlramImageButton.snp.makeConstraints { make in
-            make.top.equalTo(view).offset(68)
-            make.trailing.equalTo(view).offset(-15)
-            make.size.equalTo(CGSize(width: 43, height: 43))
+            make.top.equalTo(view).offset(63.5)
+            make.trailing.equalTo(view).offset(-20)
+            make.size.equalTo(CGSize(width: 33, height: 33))
         }
         
         horizonLine.snp.makeConstraints { make in
-            make.top.equalTo(view).offset(129)
+            make.top.equalTo(view).offset(114)
             make.width.equalTo(view)
             make.height.equalTo(1)
         }
@@ -349,7 +351,7 @@ class HomeViewController: UIViewController {
         }
         
         homeViewScrollView.snp.makeConstraints { make in
-            make.top.equalTo(view).offset(130)
+            make.top.equalTo(view).offset(115)
             make.leading.trailing.bottom.equalTo(0)
         }
         
@@ -363,7 +365,7 @@ class HomeViewController: UIViewController {
     }
     
     private func ContentViewLayout() {
-        contentView.backgroundColor = UIColor.scrollViewbackgroundColor
+        contentView.backgroundColor = UIColor.contentViewBackgroundColor
 
         contentViewList = [homeViewCategoryLabel, homeViewCollectionView, homeViewCreateGatheringLabel, homeViewCreateGatheringCell, homeViewHobbyStoryLabel, homeViewHobbyStoryCell, homeViewCreateGatheringCellInsideLabel, homeViewHobbyStoryCellInsideLabel, homeViewCreateGatheringCellInsideButton, homeViewHobbyStoryCellInsideButton, homeViewCreateGatheringCellInsideImage, homeViewHobbyStoryCellInsideImage, copylightSymbol, copylightLabel]
         
@@ -375,21 +377,21 @@ class HomeViewController: UIViewController {
         contentView.insertSubview(homeViewSearchTextField, at: 1)
         contentView.insertSubview(magnifyingGlassButton, at: 2)
         
-        homeViewSearchTextFieldBox.snp.makeConstraints { make in
-            make.top.equalTo(contentView).offset(-1045)
-            make.width.equalTo(contentView)
-            make.height.equalTo(1100)
+//        homeViewSearchTextFieldBox.snp.makeConstraints { make in
+//            make.top.equalTo(contentView).offset(-1045)
+//            make.width.equalTo(contentView)
+//            make.height.equalTo(1100)
+//
+//        }
 
-        }
-        
         homeViewSearchTextField.snp.makeConstraints { make in
-            make.top.equalTo(contentView).offset(0)
+            make.top.equalTo(contentView).offset(30)
             make.leading.equalTo(contentView).offset(15)
             make.size.equalTo(CGSize(width: 360, height: 40))
         }
         
         homeViewCategoryLabel.snp.makeConstraints { make in
-            make.top.equalTo(homeViewSearchTextField.snp.bottom).offset(60)
+            make.top.equalTo(homeViewSearchTextField.snp.bottom).offset(30)
             make.leading.equalTo(homeViewSearchTextField).offset(10)
         }
         
@@ -471,10 +473,36 @@ class HomeViewController: UIViewController {
             make.bottom.equalTo(copylightSymbol).offset(-0.5)
             make.leading.equalTo(copylightSymbol.snp.trailing).offset(2)
         }
+        
+        homeViewCreateGatheringCellInsideButton.addTarget(self, action: #selector(createMeetingButtonAction), for: .touchUpInside)
+        homeViewHobbyStoryCellInsideButton.addTarget(self, action: #selector(showStoryViewButtonAction), for: .touchUpInside)
+    }
+    
+    @objc func createMeetingButtonAction() {
+        let viewController = CreateMeetingViewController()
+ 
+        let nav = UINavigationController(rootViewController: viewController)
+        
+        nav.modalPresentationStyle = .pageSheet
+
+        if let sheet = nav.sheetPresentationController {
+            sheet.detents = [.medium(), .medium()]
+        }
+
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+    @objc func showStoryViewButtonAction() {
+        let viewController = StoryViewController()
+ 
+        viewController.modalPresentationStyle = .fullScreen
+//        viewController.modalTransitionStyle = .crossDissolve
+
+        self.present(viewController, animated: true, completion: nil)
     }
     
     private func CollectionViewLayout() {
-        homeViewCollectionView.backgroundColor = UIColor.scrollViewbackgroundColor
+        homeViewCollectionView.backgroundColor = UIColor.contentViewBackgroundColor
         
         self.homeViewCollectionView.dataSource = self
         self.homeViewCollectionView.delegate = self
@@ -505,10 +533,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeViewCollectionCell", for: indexPath) as? HomeViewCollectionCell else { return UICollectionViewCell() }
-        
-//        cell.layer.borderWidth = 0.7
-//        cell.layer.borderColor = UIColor.hobbyCellBorderColor?.cgColor
-//        cell.layer.cornerRadius = 15
         
         cell.userViewImage.image = logoImageList[indexPath.row]
         cell.userViewTitle.text = logoTitleList[indexPath.row]

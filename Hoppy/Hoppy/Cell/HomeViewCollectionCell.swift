@@ -27,15 +27,15 @@ class HomeViewCollectionCell: UICollectionViewCell {
     }()
     
     private func setConstraint() {
-        contentView.backgroundColor = UIColor.scrollViewbackgroundColor
+        contentView.backgroundColor = UIColor.contentViewBackgroundColor
         
         addSubview(userViewImage)
         addSubview(userViewTitle)
         
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.2
-        layer.shadowRadius = 2
-        layer.shadowOffset = CGSize(width: 10, height: 10)
+//        layer.shadowColor = UIColor.black.cgColor
+//        layer.shadowOpacity = 0.2
+//        layer.shadowRadius = 2
+//        layer.shadowOffset = CGSize(width: 10, height: 10)
 
         contentView.layer.borderWidth = 0.7
         contentView.layer.borderColor = UIColor.hobbyCellBorderColor?.cgColor

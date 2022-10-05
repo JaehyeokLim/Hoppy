@@ -10,10 +10,16 @@
 		445465F1E510A0DD94E2F033 /* Pods_Hoppy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E089667148D0619ED0A5A687 /* Pods_Hoppy.framework */; };
 		9AC01C6442FEACA59B239D36 /* Pods_HoppyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9353B7E94DC58FE52C4A1100 /* Pods_HoppyTests.framework */; };
 		E15463BBA2C1380954A98AF5 /* Pods_Hoppy_HoppyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92998C21DFBB034E384DD63E /* Pods_Hoppy_HoppyUITests.framework */; };
+		FA198B7D28D9E41A00A51D10 /* JsonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA198B7C28D9E41A00A51D10 /* JsonDataManager.swift */; };
 		FA215D2128D0600A0086A6BB /* HomeViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA215D1D28D0600A0086A6BB /* HomeViewCollectionCell.swift */; };
 		FA215D2228D0600A0086A6BB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA215D1E28D0600A0086A6BB /* HomeViewController.swift */; };
 		FA215D2328D0600A0086A6BB /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA215D1F28D0600A0086A6BB /* SideMenuViewController.swift */; };
 		FA215D2428D0600A0086A6BB /* SideMenuViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA215D2028D0600A0086A6BB /* SideMenuViewTableCell.swift */; };
+		FA40975528EBEEA600A640A7 /* CreateMeetingViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40975428EBEEA600A640A7 /* CreateMeetingViewCollectionCell.swift */; };
+		FA40975728EC0A0F00A640A7 /* WriteMeetingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40975628EC0A0F00A640A7 /* WriteMeetingProfileViewController.swift */; };
+		FA40975928EC27AD00A640A7 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40975828EC27AD00A640A7 /* StoryViewController.swift */; };
+		FA40975C28ED38AB00A640A7 /* StroyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40975B28ED38AB00A640A7 /* StroyDataManager.swift */; };
+		FA8E913628E5A2D2001805F8 /* CreateMeeingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E913528E5A2D2001805F8 /* CreateMeeingViewController.swift */; };
 		FAD08F7428D05E70009C4C8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08F7328D05E70009C4C8F /* AppDelegate.swift */; };
 		FAD08F7628D05E70009C4C8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08F7528D05E70009C4C8F /* SceneDelegate.swift */; };
 		FAD08F7E28D05E70009C4C8F /* Hoppy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAD08F7C28D05E70009C4C8F /* Hoppy.xcdatamodeld */; };
@@ -51,10 +57,16 @@
 		9353B7E94DC58FE52C4A1100 /* Pods_HoppyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoppyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA89C08E51F9C10853C979C8 /* Pods-Hoppy-HoppyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoppy-HoppyUITests.release.xcconfig"; path = "Target Support Files/Pods-Hoppy-HoppyUITests/Pods-Hoppy-HoppyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E089667148D0619ED0A5A687 /* Pods_Hoppy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hoppy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA198B7C28D9E41A00A51D10 /* JsonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDataManager.swift; sourceTree = "<group>"; };
 		FA215D1D28D0600A0086A6BB /* HomeViewCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCollectionCell.swift; sourceTree = "<group>"; };
 		FA215D1E28D0600A0086A6BB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FA215D1F28D0600A0086A6BB /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		FA215D2028D0600A0086A6BB /* SideMenuViewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewTableCell.swift; sourceTree = "<group>"; };
+		FA40975428EBEEA600A640A7 /* CreateMeetingViewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMeetingViewCollectionCell.swift; sourceTree = "<group>"; };
+		FA40975628EC0A0F00A640A7 /* WriteMeetingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMeetingProfileViewController.swift; sourceTree = "<group>"; };
+		FA40975828EC27AD00A640A7 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		FA40975B28ED38AB00A640A7 /* StroyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroyDataManager.swift; sourceTree = "<group>"; };
+		FA8E913528E5A2D2001805F8 /* CreateMeeingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMeeingViewController.swift; sourceTree = "<group>"; };
 		FAD08F7028D05E70009C4C8F /* Hoppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoppy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD08F7328D05E70009C4C8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD08F7528D05E70009C4C8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +137,9 @@
 			children = (
 				FA215D1E28D0600A0086A6BB /* HomeViewController.swift */,
 				FA215D1F28D0600A0086A6BB /* SideMenuViewController.swift */,
+				FA8E913528E5A2D2001805F8 /* CreateMeeingViewController.swift */,
+				FA40975628EC0A0F00A640A7 /* WriteMeetingProfileViewController.swift */,
+				FA40975828EC27AD00A640A7 /* StoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -134,6 +149,7 @@
 			children = (
 				FA215D1D28D0600A0086A6BB /* HomeViewCollectionCell.swift */,
 				FA215D2028D0600A0086A6BB /* SideMenuViewTableCell.swift */,
+				FA40975428EBEEA600A640A7 /* CreateMeetingViewCollectionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -145,6 +161,14 @@
 				FAD08F7528D05E70009C4C8F /* SceneDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		FA40975A28ED389A00A640A7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FA40975B28ED38AB00A640A7 /* StroyDataManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		FAD08F6728D05E70009C4C8F = {
@@ -172,6 +196,7 @@
 		FAD08F7228D05E70009C4C8F /* Hoppy */ = {
 			isa = PBXGroup;
 			children = (
+				FA40975A28ED389A00A640A7 /* Manager */,
 				FA215D2928D060370086A6BB /* Delegate */,
 				FA215D2628D060230086A6BB /* Cell */,
 				FA215D2528D060100086A6BB /* ViewController */,
@@ -179,6 +204,7 @@
 				FAD08F8128D05E71009C4C8F /* LaunchScreen.storyboard */,
 				FAD08F8428D05E71009C4C8F /* Info.plist */,
 				FAD08F7C28D05E70009C4C8F /* Hoppy.xcdatamodeld */,
+				FA198B7C28D9E41A00A51D10 /* JsonDataManager.swift */,
 			);
 			path = Hoppy;
 			sourceTree = "<group>";
@@ -438,6 +464,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA40975928EC27AD00A640A7 /* StoryViewController.swift in Sources */,
+				FA40975528EBEEA600A640A7 /* CreateMeetingViewCollectionCell.swift in Sources */,
 				FA215D2228D0600A0086A6BB /* HomeViewController.swift in Sources */,
 				FAD08F7428D05E70009C4C8F /* AppDelegate.swift in Sources */,
 				FAD08F7E28D05E70009C4C8F /* Hoppy.xcdatamodeld in Sources */,
@@ -445,6 +473,10 @@
 				FA215D2428D0600A0086A6BB /* SideMenuViewTableCell.swift in Sources */,
 				FA215D2328D0600A0086A6BB /* SideMenuViewController.swift in Sources */,
 				FA215D2128D0600A0086A6BB /* HomeViewCollectionCell.swift in Sources */,
+				FA40975728EC0A0F00A640A7 /* WriteMeetingProfileViewController.swift in Sources */,
+				FA40975C28ED38AB00A640A7 /* StroyDataManager.swift in Sources */,
+				FA198B7D28D9E41A00A51D10 /* JsonDataManager.swift in Sources */,
+				FA8E913628E5A2D2001805F8 /* CreateMeeingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
