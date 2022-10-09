@@ -19,6 +19,11 @@
 		FA40975728EC0A0F00A640A7 /* WriteMeetingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40975628EC0A0F00A640A7 /* WriteMeetingProfileViewController.swift */; };
 		FA40975928EC27AD00A640A7 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40975828EC27AD00A640A7 /* StoryViewController.swift */; };
 		FA40975C28ED38AB00A640A7 /* StroyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40975B28ED38AB00A640A7 /* StroyDataManager.swift */; };
+		FA40975F28ED5BB600A640A7 /* StoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40975E28ED5BB600A640A7 /* StoryDataModel.swift */; };
+		FA40976128EE9A1400A640A7 /* StoryViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40976028EE9A1400A640A7 /* StoryViewCollectionCell.swift */; };
+		FA5660F228F19D4B00AB0D67 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5660F128F19D4B00AB0D67 /* MyPageViewController.swift */; };
+		FA5660F428F19D5800AB0D67 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5660F328F19D5800AB0D67 /* LoginDataManager.swift */; };
+		FA5660F628F26F2D00AB0D67 /* WriteStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5660F528F26F2D00AB0D67 /* WriteStoryViewController.swift */; };
 		FA8E913628E5A2D2001805F8 /* CreateMeeingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E913528E5A2D2001805F8 /* CreateMeeingViewController.swift */; };
 		FAD08F7428D05E70009C4C8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08F7328D05E70009C4C8F /* AppDelegate.swift */; };
 		FAD08F7628D05E70009C4C8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08F7528D05E70009C4C8F /* SceneDelegate.swift */; };
@@ -66,6 +71,11 @@
 		FA40975628EC0A0F00A640A7 /* WriteMeetingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMeetingProfileViewController.swift; sourceTree = "<group>"; };
 		FA40975828EC27AD00A640A7 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		FA40975B28ED38AB00A640A7 /* StroyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroyDataManager.swift; sourceTree = "<group>"; };
+		FA40975E28ED5BB600A640A7 /* StoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDataModel.swift; sourceTree = "<group>"; };
+		FA40976028EE9A1400A640A7 /* StoryViewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewCollectionCell.swift; sourceTree = "<group>"; };
+		FA5660F128F19D4B00AB0D67 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		FA5660F328F19D5800AB0D67 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
+		FA5660F528F26F2D00AB0D67 /* WriteStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteStoryViewController.swift; sourceTree = "<group>"; };
 		FA8E913528E5A2D2001805F8 /* CreateMeeingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMeeingViewController.swift; sourceTree = "<group>"; };
 		FAD08F7028D05E70009C4C8F /* Hoppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoppy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD08F7328D05E70009C4C8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +150,8 @@
 				FA8E913528E5A2D2001805F8 /* CreateMeeingViewController.swift */,
 				FA40975628EC0A0F00A640A7 /* WriteMeetingProfileViewController.swift */,
 				FA40975828EC27AD00A640A7 /* StoryViewController.swift */,
+				FA5660F128F19D4B00AB0D67 /* MyPageViewController.swift */,
+				FA5660F528F26F2D00AB0D67 /* WriteStoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -150,6 +162,7 @@
 				FA215D1D28D0600A0086A6BB /* HomeViewCollectionCell.swift */,
 				FA215D2028D0600A0086A6BB /* SideMenuViewTableCell.swift */,
 				FA40975428EBEEA600A640A7 /* CreateMeetingViewCollectionCell.swift */,
+				FA40976028EE9A1400A640A7 /* StoryViewCollectionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -167,8 +180,17 @@
 			isa = PBXGroup;
 			children = (
 				FA40975B28ED38AB00A640A7 /* StroyDataManager.swift */,
+				FA5660F328F19D5800AB0D67 /* LoginDataManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		FA40975D28ED5BA800A640A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA40975E28ED5BB600A640A7 /* StoryDataModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FAD08F6728D05E70009C4C8F = {
@@ -196,6 +218,7 @@
 		FAD08F7228D05E70009C4C8F /* Hoppy */ = {
 			isa = PBXGroup;
 			children = (
+				FA40975D28ED5BA800A640A7 /* Model */,
 				FA40975A28ED389A00A640A7 /* Manager */,
 				FA215D2928D060370086A6BB /* Delegate */,
 				FA215D2628D060230086A6BB /* Cell */,
@@ -467,16 +490,21 @@
 				FA40975928EC27AD00A640A7 /* StoryViewController.swift in Sources */,
 				FA40975528EBEEA600A640A7 /* CreateMeetingViewCollectionCell.swift in Sources */,
 				FA215D2228D0600A0086A6BB /* HomeViewController.swift in Sources */,
+				FA40975F28ED5BB600A640A7 /* StoryDataModel.swift in Sources */,
 				FAD08F7428D05E70009C4C8F /* AppDelegate.swift in Sources */,
 				FAD08F7E28D05E70009C4C8F /* Hoppy.xcdatamodeld in Sources */,
+				FA40976128EE9A1400A640A7 /* StoryViewCollectionCell.swift in Sources */,
+				FA5660F228F19D4B00AB0D67 /* MyPageViewController.swift in Sources */,
 				FAD08F7628D05E70009C4C8F /* SceneDelegate.swift in Sources */,
 				FA215D2428D0600A0086A6BB /* SideMenuViewTableCell.swift in Sources */,
 				FA215D2328D0600A0086A6BB /* SideMenuViewController.swift in Sources */,
 				FA215D2128D0600A0086A6BB /* HomeViewCollectionCell.swift in Sources */,
+				FA5660F628F26F2D00AB0D67 /* WriteStoryViewController.swift in Sources */,
 				FA40975728EC0A0F00A640A7 /* WriteMeetingProfileViewController.swift in Sources */,
 				FA40975C28ED38AB00A640A7 /* StroyDataManager.swift in Sources */,
 				FA198B7D28D9E41A00A51D10 /* JsonDataManager.swift in Sources */,
 				FA8E913628E5A2D2001805F8 /* CreateMeeingViewController.swift in Sources */,
+				FA5660F428F19D5800AB0D67 /* LoginDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,8 +679,11 @@
 				INFOPLIST_FILE = Hoppy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -679,8 +710,11 @@
 				INFOPLIST_FILE = Hoppy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

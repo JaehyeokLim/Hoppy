@@ -11,6 +11,7 @@ target 'Hoppy' do
   pod 'KakaoSDKCommon'
   pod 'KakaoSDKAuth'
   pod 'KakaoSDKUser'
+  pod 'MaterialComponents/Buttons'
   target 'HoppyTests' do
     inherit! :search_paths
     # Pods for testing

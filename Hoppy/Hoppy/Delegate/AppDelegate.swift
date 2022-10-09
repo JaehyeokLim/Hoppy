@@ -13,28 +13,11 @@ import KakaoSDKAuth
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    
-//    class AppDelegate: UIResponder, UIApplicationDelegate {
-////        ...
-//        func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-//            let webURL = "https://www.kauth.kakao.com/oauth/authorize?client_id=e1ec33bfac22318d6629869f6bf7bc7a&redirect_uri=http://localhost:8888/login/oauth2/code/kakao&response_type=code HTTP/1.1"
-//            
-////            let covURL = try? URL(from: webURL as! Decoder)
-//            let URL  = URL(string: webURL)
-//            if (AuthApi.isKakaoTalkLoginUrl(URL!)) {
-//                return AuthController.handleOpenUrl(url: URL!)
-//            }
-//
-//            return false
-//        }
-////        ...
-//    }
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         KakaoSDK.initSDK(appKey: "e020616ac8bec0c8eda3f706851b9a78")
-//        JsonDataManager().seqPostBoxStatusGet()
+        StroyDataManager().storyDataLoadInitFunction()
         
         return true
     }

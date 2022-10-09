@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialButtons
 
 class StoryViewController: UIViewController {
     
@@ -29,6 +30,16 @@ class StoryViewController: UIViewController {
         view.backgroundColor = UIColor.contentViewBackgroundColor
         view.translatesAutoresizingMaskIntoConstraints = false
 
+        return view
+    }()
+    
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        view.backgroundColor = UIColor.contentViewBackgroundColor
+        view.register(StoryViewCollectionCell.self, forCellWithReuseIdentifier: "StoryViewCollectionCell")
+        
         return view
     }()
     
@@ -71,6 +82,17 @@ class StoryViewController: UIViewController {
         label.layer.borderColor = UIColor.darkGray.cgColor
 
         return label
+    }()
+    
+    private let writeStoryFloatingButton: MDCFloatingButton = {
+        let button = MDCFloatingButton()
+        
+//        button.imageView?.image = UIImage(systemName: "plus")
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.tintColor = UIColor.white
+        button.backgroundColor = UIColor.hobbyCellBackgroundColor
+        
+        return button
     }()
 
     override func viewDidLoad() {
@@ -129,20 +151,23 @@ class StoryViewController: UIViewController {
         contentView.snp.makeConstraints { make in
             make.top.leading.trailing.bottom.equalTo(0)
             make.width.equalTo(storyViewScrollView)
-            make.height.equalTo(900)
+            make.height.equalTo(700)
         }
     }
 
     private func contentViewLayout() {
 
-        contentViewList = [titleLabel, contentViewHorizonLine]
+        contentViewList = [titleLabel, contentViewHorizonLine, collectionView, writeStoryFloatingButton]
 
         for uiView in contentViewList {
             contentView.addSubview(uiView)
         }
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(contentView).offset(40)
+            make.top.equalTo(contentView).offset(15)
             make.leading.equalTo(contentView).offset(25)
         }
         
@@ -152,5 +177,102 @@ class StoryViewController: UIViewController {
             make.trailing.equalTo(contentView).offset(-15)
             make.height.equalTo(1)
         }
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(contentViewHorizonLine).offset(30)
+            make.width.equalTo(contentView)
+            make.bottom.equalTo(contentView)
+        }
+        
+        writeStoryFloatingButton.snp.makeConstraints { make in
+            make.bottom.equalTo(contentView)
+            make.trailing.equalTo(contentView).offset(-20)
+            make.size.equalTo(CGSize(width: 40, height: 40))
+        }
+        
+        writeStoryFloatingButton.addTarget(self, action: #selector(writeStoryFloatingButtonAction), for: .touchUpInside)
+    }
+    
+    @objc func writeStoryFloatingButtonAction() {
+        let viewController = WriteStoryViewController()
+        
+        viewController.modalPresentationStyle = .fullScreen
+        
+        present(viewController, animated: true)
     }
 }
+
+extension StoryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return StoryDetailDataList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryViewCollectionCell", for: indexPath) as? StoryViewCollectionCell else {
+            return UICollectionViewCell()
+        }
+        
+        // profile Image
+        let url = URL(string: StoryDetailDataList[indexPath.row].profileUrl!)
+        cell.storyCellProfileImage.load(url: url!)
+        
+        cell.storyCellUsername.text = StoryDetailDataList[indexPath.row].username
+        
+        cell.storyCellCreatedDate.text = StoryDetailDataList[indexPath.row].createDate
+        
+        cell.storyCellTitleLabel.text = StoryDetailDataList[indexPath.row].title
+        
+        cell.storyCellMainTextLabel.text = StoryDetailDataList[indexPath.row].content
+        
+        if StoryDetailDataList[indexPath.row].filename != "" {
+            let mainImageUrl = URL(string:  StoryDetailDataList[indexPath.row].filename!)
+            cell.storyCellMainImage.load(url: mainImageUrl!)
+        } else {
+            cell.storyCellMainImage.image = UIImage()
+        }
+        
+        return cell
+    }
+}
+
+extension StoryViewController: UICollectionViewDelegateFlowLayout {
+
+    // 위 아래 간격
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAt section: Int
+        ) -> CGFloat {
+        return 15
+    }
+
+    // 옆 간격
+    func collectionView(
+      _ collectionView: UICollectionView,
+      layout collectionViewLayout: UICollectionViewLayout,
+      minimumInteritemSpacingForSectionAt section: Int
+      ) -> CGFloat {
+          return 0
+      }
+
+    // cell 사이즈( 옆 라인을 고려하여 설정 )
+    func collectionView(
+      _ collectionView: UICollectionView,
+      layout collectionViewLayout: UICollectionViewLayout,
+      sizeForItemAt indexPath: IndexPath
+      ) -> CGSize {
+          
+          switch StoryDetailDataList[indexPath.row].filename {
+        
+          case "":
+              return CGSize(width: 370, height: 120)
+              
+          default:
+              return CGSize(width: 370, height: 500)
+              
+          }
+    }
+}
+
+

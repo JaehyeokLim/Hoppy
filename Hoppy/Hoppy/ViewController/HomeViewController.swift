@@ -300,7 +300,7 @@ class HomeViewController: UIViewController {
         ContentViewLayout()
         CollectionViewLayout()
     }
-
+    
     private func HomeViewLayout() {
         view.backgroundColor = UIColor.white
         
@@ -614,3 +614,4 @@ extension HomeViewController: UITextFieldDelegate {
         self.homeViewScrollView.endEditing(true)
     }
 }
+

@@ -185,6 +185,8 @@ class SideMenuViewController: UIViewController {
                 } else {
                     
                     print("loginWithKakaoTalk() success.")
+                    self.kakaoUserDataLoad()
+                    
                     print("oauth 토큰 생성: \(oauthToken)")
                 }
             }
@@ -217,18 +219,24 @@ class SideMenuViewController: UIViewController {
             else {
                 print("사용자 정보 가져오기 성공")
                 
-                if let name = user?.kakaoAccount?.profile?.nickname {
-                    if let mail = user?.kakaoAccount?.email {
-                        if let gender = user?.kakaoAccount?.gender {
-                            if let ageRange = user?.kakaoAccount?.ageRange {
-                                if let birthday = user?.kakaoAccount?.ageRange {
-                                    self.userProfileName.text = name + "\n님"
-                                    self.userProfileName.font = UIFont.boldSystemFont(ofSize: 18)
-                                    self.userProfileSubLabel.isHidden = false
-                                    self.items = ["로그아웃", "마이페이지", "회원탈퇴"]
-                                    
-                                    print("이름: \(name)\n이메일: \(mail)\n성별: \(gender)\n연령대: \(ageRange)\n생년월일: \(birthday)")
-                                    self.tableView.reloadData()
+                
+                if let id = user?.id {
+                    if let name = user?.kakaoAccount?.profile?.nickname {
+                        if let mail = user?.kakaoAccount?.email {
+                            if let gender = user?.kakaoAccount?.gender {
+                                if let ageRange = user?.kakaoAccount?.ageRange {
+                                    if let birthday = user?.kakaoAccount?.ageRange {
+                                        self.userProfileName.text = name + "\n님"
+                                        self.userProfileName.font = UIFont.boldSystemFont(ofSize: 18)
+                                        self.userProfileSubLabel.isHidden = false
+                                        self.items = ["로그아웃", "마이페이지", "회원탈퇴"]
+                                        
+                                        print("id: \(id)\n이름: \(name)\n이메일: \(mail)\n성별: \(gender)\n연령대: \(ageRange)\n생년월일: \(birthday)")
+                                        
+                                        LoginDataManager().loginDataManagerFunction(id: Int(id), email: mail)
+                                        
+                                        self.tableView.reloadData()
+                                    }
                                 }
                             }
                         }
