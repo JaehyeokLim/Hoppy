@@ -9,6 +9,7 @@ import UIKit
 import KakaoSDKAuth
 import KakaoSDKUser
 import KakaoSDKCommon
+import KakaoSDKTalk
 
 class SideMenuViewController: UIViewController {
     var items = ["로그인", "마이페이지", "회원탈퇴"]
@@ -142,7 +143,6 @@ class SideMenuViewController: UIViewController {
                 }
                 else {
                     //토큰 유효성 체크 성공(필요 시 토큰 갱신됨)
-                    print("access 토큰 생성: \(String(describing: accessTokenInfo))")
                     self.kakaoUserDataLoad()
                 }
             }
@@ -153,31 +153,10 @@ class SideMenuViewController: UIViewController {
         }
     }
     
-    func kakaoUserTokenCheck() {
-        if (AuthApi.hasToken()) {
-            UserApi.shared.accessTokenInfo { (_, error) in
-                if let error = error {
-                    if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() == true  {
-                        //로그인 필요
-                    }
-                    else {
-                        //기타 에러
-                    }
-                }
-                else {
-                    //토큰 유효성 체크 성공(필요 시 토큰 갱신됨)
-                }
-            }
-        }
-        else {
-            //로그인 필요
-        }
-    }
-    
     func kakaoUserLogin() {
-        if (!UserApi.isKakaoTalkLoginAvailable()) {
+        if (UserApi.isKakaoTalkLoginAvailable()) {
             // 카카오톡 로그인. api 호출 결과를 클로저로 전달.
-            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                 if let error = error {
                     // 예외 처리 (로그인 취소 등)
                     print(error)
@@ -186,14 +165,13 @@ class SideMenuViewController: UIViewController {
                     
                     print("loginWithKakaoTalk() success.")
                     self.kakaoUserDataLoad()
-                    
-                    print("oauth 토큰 생성: \(oauthToken)")
+
                 }
             }
             
-        } else {
+        } else if (!UserApi.isKakaoTalkLoginAvailable()) {
             
-            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                if let error = error {
                    
                  print(error)
@@ -202,49 +180,46 @@ class SideMenuViewController: UIViewController {
                    
                     print("loginWithKakaoAccount() success.")
                     self.kakaoUserDataLoad()
-                   
-                   //do something
-                    print("oauth 토큰 생성: \(oauthToken)")
+ 
                 }
             }
         }
     }
     
     func kakaoUserDataLoad() {
-        
         UserApi.shared.me() {(user, error) in
             if let error = error {
                 print(error)
             }
             else {
-                print("사용자 정보 가져오기 성공")
+                print("me() success.")
                 
+                //do something
+                let info = user
+                print(info!)
                 
                 if let id = user?.id {
                     if let name = user?.kakaoAccount?.profile?.nickname {
                         if let mail = user?.kakaoAccount?.email {
-                            if let gender = user?.kakaoAccount?.gender {
-                                if let ageRange = user?.kakaoAccount?.ageRange {
-                                    if let birthday = user?.kakaoAccount?.ageRange {
-                                        self.userProfileName.text = name + "\n님"
-                                        self.userProfileName.font = UIFont.boldSystemFont(ofSize: 18)
-                                        self.userProfileSubLabel.isHidden = false
-                                        self.items = ["로그아웃", "마이페이지", "회원탈퇴"]
-                                        
-                                        print("id: \(id)\n이름: \(name)\n이메일: \(mail)\n성별: \(gender)\n연령대: \(ageRange)\n생년월일: \(birthday)")
-                                        
-                                        LoginDataManager().loginDataManagerFunction(id: Int(id), email: mail)
-                                        
-                                        self.tableView.reloadData()
-                                    }
-                                }
+                            if let profile = user?.kakaoAccount?.profile?.thumbnailImageUrl {
+                                self.userProfileName.text = name + "\n님"
+                                self.userProfileName.font = UIFont.boldSystemFont(ofSize: 18)
+                                self.userProfileSubLabel.isHidden = false
+                                self.items = ["로그아웃", "마이페이지", "회원탈퇴"]
+                                
+                                let profileUrl = profile.absoluteString
+                                
+                                print("id: \(id)\n이름: \(name)\n이메일: \(mail)\n프로필: \(profileUrl)")
+                                
+                                LoginDataManager().loginDataManagerFunction(id: Int(id), email: mail, profileUrl: profileUrl)
+                                
+                                self.tableView.reloadData()
                             }
                         }
                     }
                 }
             }
         }
-        
         
     }
 }
@@ -262,5 +237,4 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
-    
 }

@@ -35,17 +35,23 @@ import UIKit
 class StroyDataManager: UIViewController {
     
     func storyDataLoadInitFunction() {
+        StoryDetailDataList.removeAll()
+        
         let semaphore = DispatchSemaphore (value: 0)
 
-        var request = URLRequest(url: URL(string: "http://hoppy.kro.kr/api/story")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://hoppy.kro.kr/api/story")!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
-
+//        request.setValue("Bearer \(TokenList[0].token)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(TokenList[0].token!)", forHTTPHeaderField: "Authorization")
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
           guard let data = data else {
             print(String(describing: error))
             semaphore.signal()
             return
           }
+            
+            print(String(data: data, encoding: .utf8))
             let StoryTotalJsonDataToJson = try? JSONDecoder().decode(StoryTotalJsonData.self, from: data)
             let StoryTotalJsonDataItem = StoryTotalDataModel(status: StoryTotalJsonDataToJson?.status, message: StoryTotalJsonDataToJson?.message)
             
@@ -57,9 +63,9 @@ class StroyDataManager: UIViewController {
                 StoryDetailDataList.append(StoryDetailDataItem)
             }
                     
-//            for i in 0..<StoryDetailDataList.count {
-//                print(StoryDetailDataList[i])
-//            }
+            for i in 0..<StoryDetailDataList.count {
+                print(StoryDetailDataList[i])
+            }
             semaphore.signal()
         }
 

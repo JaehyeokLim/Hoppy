@@ -101,10 +101,14 @@ class StoryViewController: UIViewController {
         superViewLayout()
         scrollViewLayout()
         contentViewLayout()
+        
+//        collectionView.reloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        collectionView.reloadData()
     }
 
     private func superViewLayout() {
@@ -213,23 +217,30 @@ extension StoryViewController: UICollectionViewDelegate, UICollectionViewDataSou
             return UICollectionViewCell()
         }
         
-        // profile Image
-        let url = URL(string: StoryDetailDataList[indexPath.row].profileUrl!)
-        cell.storyCellProfileImage.load(url: url!)
-        
         cell.storyCellUsername.text = StoryDetailDataList[indexPath.row].username
-        
+
         cell.storyCellCreatedDate.text = StoryDetailDataList[indexPath.row].createDate
         
         cell.storyCellTitleLabel.text = StoryDetailDataList[indexPath.row].title
         
         cell.storyCellMainTextLabel.text = StoryDetailDataList[indexPath.row].content
         
+        if StoryDetailDataList[indexPath.row].profileUrl == "null" {
+            cell.storyCellProfileImage.image = UIImage()
+        } else {
+            let url = URL(string: StoryDetailDataList[indexPath.row].profileUrl!)
+            cell.storyCellProfileImage.load(url: url!)
+        }
+        
         if StoryDetailDataList[indexPath.row].filename != "" {
             let mainImageUrl = URL(string:  StoryDetailDataList[indexPath.row].filename!)
-            cell.storyCellMainImage.load(url: mainImageUrl!)
+            cell.storyCellMainImage.load(url: (mainImageUrl!))
+            cell.storyCellMainImage.backgroundColor = UIColor.black
+            cell.storyCellMainImage.isHidden = false
         } else {
             cell.storyCellMainImage.image = UIImage()
+            cell.storyCellMainImage.backgroundColor = UIColor.white
+            cell.storyCellMainImage.isHidden = true
         }
         
         return cell
@@ -262,15 +273,11 @@ extension StoryViewController: UICollectionViewDelegateFlowLayout {
       layout collectionViewLayout: UICollectionViewLayout,
       sizeForItemAt indexPath: IndexPath
       ) -> CGSize {
-          
-          switch StoryDetailDataList[indexPath.row].filename {
-        
-          case "":
+
+          if StoryDetailDataList[indexPath.row].filename == "" {
               return CGSize(width: 370, height: 120)
-              
-          default:
+          } else {
               return CGSize(width: 370, height: 500)
-              
           }
     }
 }

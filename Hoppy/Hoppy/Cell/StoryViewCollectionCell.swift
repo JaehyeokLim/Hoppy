@@ -73,7 +73,8 @@ class StoryViewCollectionCell: UICollectionViewCell {
     let storyCellMainImage: UIImageView = {
         let imageView = UIImageView()
         
-        
+//        imageView.backgroundColor = UIColor.black
+        imageView.contentMode = .scaleAspectFit
         
         return imageView
     }()
@@ -114,10 +115,11 @@ class StoryViewCollectionCell: UICollectionViewCell {
         }
         
         storyCellMainImage.snp.makeConstraints { make in
-            make.top.equalTo(storyCellMainTextLabel).offset(20)
-            make.leading.equalTo(contentView).offset(6)
-            make.trailing.equalTo(contentView).offset(-6)
+            make.top.equalTo(storyCellMainTextLabel.snp.bottom).offset(20)
+            make.leading.equalTo(contentView).offset(10)
+            make.trailing.equalTo(contentView).offset(-10)
             make.height.equalTo(350)
+//            make.bottom.equalTo(storyCellHorizonLine.snp.top).offset(-20)
         }
         
         storyCellHorizonLine.snp.makeConstraints { make in

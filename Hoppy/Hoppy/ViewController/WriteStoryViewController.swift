@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import SnapKit
+import Photos
 
 class WriteStoryViewController: UIViewController {
     
     var superViewUIViewList: [UIView] = []
     var scrollViewList: [UIView] = []
     var contentViewList: [UIView] = []
+    let imagePicker = UIImagePickerController()
     
     private let writeMeetingProfileViewScrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -98,9 +101,9 @@ class WriteStoryViewController: UIViewController {
         let button = UIButton()
         
         button.setTitle("사진 첨부하기", for: .normal)
-        button.setTitleColor(UIColor.lightGray, for: .normal)
+        button.setTitleColor(UIColor.darkGray, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        button.layer.borderColor = UIColor.darkGray.cgColor
+        button.layer.borderColor = UIColor.textFieldBorderColor?.cgColor
         button.layer.cornerRadius = 10
         button.layer.borderWidth = 1.2
         
@@ -110,7 +113,7 @@ class WriteStoryViewController: UIViewController {
     private let mainImageCheckCell: UIButton = {
         let button = UIButton()
         
-        button.layer.borderColor = UIColor.darkGray.cgColor
+        button.layer.borderColor = UIColor.textFieldBorderColor?.cgColor
         button.layer.cornerRadius = 10
         button.layer.borderWidth = 1.2
         
@@ -130,6 +133,28 @@ class WriteStoryViewController: UIViewController {
         
         return button
     }()
+    
+    private let previewImage: UIImageView = {
+        let image = UIImageView()
+        
+        image.clipsToBounds = true
+        image.backgroundColor = UIColor.lightGray
+        image.layer.cornerRadius = 7
+        
+        return image
+    }()
+    
+    private let trashButton: UIButton = {
+        let button = UIButton()
+        
+        button.contentHorizontalAlignment = .fill
+        button.contentVerticalAlignment = .fill
+        button.setImage(UIImage(systemName: "trash"), for: .normal)
+        button.tintColor = UIColor.lightGray
+        
+        return button
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -189,8 +214,10 @@ class WriteStoryViewController: UIViewController {
     
     private func contentViewLayout() {
         
-        contentViewList = [titleLabel, categoryTitleTextField, mainImageAppendButton, mainTextView, saveButton, mainImageCheckCell]
+        contentViewList = [titleLabel, categoryTitleTextField, mainImageAppendButton, mainTextView, saveButton, mainImageCheckCell, previewImage, trashButton]
         
+        imagePicker.delegate = self
+
         for uiView in contentViewList {
             contentView.addSubview(uiView)
         }
@@ -225,7 +252,7 @@ class WriteStoryViewController: UIViewController {
             make.top.equalTo(mainImageAppendButton.snp.bottom).offset(15)
             make.leading.equalTo(contentView).offset(15)
             make.trailing.equalTo(-15)
-            make.height.equalTo(65)
+            make.height.equalTo(80)
         }
         
         saveButton.snp.makeConstraints { make in
@@ -234,10 +261,78 @@ class WriteStoryViewController: UIViewController {
             make.trailing.equalTo(-130)
             make.height.equalTo(45)
         }
+        
+        previewImage.snp.makeConstraints { make in
+            make.top.equalTo(mainImageCheckCell).offset(10)
+            make.leading.equalTo(mainImageCheckCell).offset(10)
+            make.bottom.equalTo(mainImageCheckCell).offset(-10)
+            make.width.equalTo(60)
+        }
+        
+        trashButton.snp.makeConstraints { make in
+            make.top.equalTo(previewImage).offset(15.5)
+            make.trailing.equalTo(mainImageCheckCell).offset(-10)
+            make.size.equalTo(CGSize(width: 26, height: 26))
+        }
+        
+        mainImageAppendButton.addTarget(self, action: #selector(choosePictureButtonAction), for: .touchUpInside)
+        trashButton.addTarget(self, action: #selector(trashButtonAction), for: .touchUpInside)
+        saveButton.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
     }
     
     @objc func backViewButtonAction(_: UIButton) {
         dismiss(animated: true)
+    }
+    
+    @objc func choosePictureButtonAction() {
+        let openCameraOrLibraryAlert = UIAlertController(title: "사진 선택하기", message: "상품의 이미지를 선택해주세요!", preferredStyle: .actionSheet)
+        let libraryAlertAction = UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()}
+        let cameraAlertAction = UIAlertAction(title: "카메라", style: .default) { (action) in self.openCamera()}
+        let cancelAlertAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        openCameraOrLibraryAlert.addAction(libraryAlertAction)
+        openCameraOrLibraryAlert.addAction(cameraAlertAction)
+        openCameraOrLibraryAlert.addAction(cancelAlertAction)
+        
+        present(openCameraOrLibraryAlert, animated: true, completion: nil)
+    }
+    
+    @objc func trashButtonAction() {
+        previewImage.image = UIImage()
+    }
+    
+    @objc func saveButtonAction() {
+        StoryDataPostManager().storyDataPostFunction(title: categoryTitleTextField.text!, content: mainTextView.text, token: TokenList[0].token!)
+        
+        StroyDataManager().storyDataLoadInitFunction()
+        
+        dismiss(animated: true)
+    }
+    
+    func openLibrary() {
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func openCamera() {
+        imagePicker.sourceType = .camera
+        
+        present(imagePicker, animated: false, completion: nil)
+    }
+}
+
+extension WriteStoryViewController : UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            previewImage.image = image
+            print(image)
+//            previewImage.contentMode = .scaleAspectFill
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
 }
 

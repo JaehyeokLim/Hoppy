@@ -497,6 +497,7 @@ class HomeViewController: UIViewController {
  
         viewController.modalPresentationStyle = .fullScreen
 //        viewController.modalTransitionStyle = .crossDissolve
+        StroyDataManager().storyDataLoadInitFunction()
 
         self.present(viewController, animated: true, completion: nil)
     }

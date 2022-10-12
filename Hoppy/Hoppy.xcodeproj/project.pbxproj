@@ -24,6 +24,12 @@
 		FA5660F228F19D4B00AB0D67 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5660F128F19D4B00AB0D67 /* MyPageViewController.swift */; };
 		FA5660F428F19D5800AB0D67 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5660F328F19D5800AB0D67 /* LoginDataManager.swift */; };
 		FA5660F628F26F2D00AB0D67 /* WriteStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5660F528F26F2D00AB0D67 /* WriteStoryViewController.swift */; };
+		FA5660F828F4FC2900AB0D67 /* LoginSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5660F728F4FC2900AB0D67 /* LoginSessionManager.swift */; };
+		FA5660FA28F5084500AB0D67 /* PhotoAuthorityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5660F928F5084500AB0D67 /* PhotoAuthorityManager.swift */; };
+		FA5660FC28F5364B00AB0D67 /* StoryDataPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5660FB28F5364B00AB0D67 /* StoryDataPostManager.swift */; };
+		FA5660FE28F537D900AB0D67 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5660FD28F537D900AB0D67 /* TokenModel.swift */; };
+		FA56610028F55C7A00AB0D67 /* UserProfileGetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5660FF28F55C7A00AB0D67 /* UserProfileGetManager.swift */; };
+		FA56610428F6BBF200AB0D67 /* ProfileDataLoadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56610328F6BBF200AB0D67 /* ProfileDataLoadManager.swift */; };
 		FA8E913628E5A2D2001805F8 /* CreateMeeingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E913528E5A2D2001805F8 /* CreateMeeingViewController.swift */; };
 		FAD08F7428D05E70009C4C8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08F7328D05E70009C4C8F /* AppDelegate.swift */; };
 		FAD08F7628D05E70009C4C8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08F7528D05E70009C4C8F /* SceneDelegate.swift */; };
@@ -76,6 +82,12 @@
 		FA5660F128F19D4B00AB0D67 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		FA5660F328F19D5800AB0D67 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
 		FA5660F528F26F2D00AB0D67 /* WriteStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteStoryViewController.swift; sourceTree = "<group>"; };
+		FA5660F728F4FC2900AB0D67 /* LoginSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSessionManager.swift; sourceTree = "<group>"; };
+		FA5660F928F5084500AB0D67 /* PhotoAuthorityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAuthorityManager.swift; sourceTree = "<group>"; };
+		FA5660FB28F5364B00AB0D67 /* StoryDataPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDataPostManager.swift; sourceTree = "<group>"; };
+		FA5660FD28F537D900AB0D67 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		FA5660FF28F55C7A00AB0D67 /* UserProfileGetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileGetManager.swift; sourceTree = "<group>"; };
+		FA56610328F6BBF200AB0D67 /* ProfileDataLoadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataLoadManager.swift; sourceTree = "<group>"; };
 		FA8E913528E5A2D2001805F8 /* CreateMeeingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMeeingViewController.swift; sourceTree = "<group>"; };
 		FAD08F7028D05E70009C4C8F /* Hoppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoppy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD08F7328D05E70009C4C8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +193,11 @@
 			children = (
 				FA40975B28ED38AB00A640A7 /* StroyDataManager.swift */,
 				FA5660F328F19D5800AB0D67 /* LoginDataManager.swift */,
+				FA5660F728F4FC2900AB0D67 /* LoginSessionManager.swift */,
+				FA5660F928F5084500AB0D67 /* PhotoAuthorityManager.swift */,
+				FA5660FB28F5364B00AB0D67 /* StoryDataPostManager.swift */,
+				FA5660FF28F55C7A00AB0D67 /* UserProfileGetManager.swift */,
+				FA56610328F6BBF200AB0D67 /* ProfileDataLoadManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -189,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				FA40975E28ED5BB600A640A7 /* StoryDataModel.swift */,
+				FA5660FD28F537D900AB0D67 /* TokenModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -487,8 +505,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA56610028F55C7A00AB0D67 /* UserProfileGetManager.swift in Sources */,
+				FA5660FA28F5084500AB0D67 /* PhotoAuthorityManager.swift in Sources */,
+				FA5660FE28F537D900AB0D67 /* TokenModel.swift in Sources */,
 				FA40975928EC27AD00A640A7 /* StoryViewController.swift in Sources */,
 				FA40975528EBEEA600A640A7 /* CreateMeetingViewCollectionCell.swift in Sources */,
+				FA56610428F6BBF200AB0D67 /* ProfileDataLoadManager.swift in Sources */,
 				FA215D2228D0600A0086A6BB /* HomeViewController.swift in Sources */,
 				FA40975F28ED5BB600A640A7 /* StoryDataModel.swift in Sources */,
 				FAD08F7428D05E70009C4C8F /* AppDelegate.swift in Sources */,
@@ -496,11 +518,13 @@
 				FA40976128EE9A1400A640A7 /* StoryViewCollectionCell.swift in Sources */,
 				FA5660F228F19D4B00AB0D67 /* MyPageViewController.swift in Sources */,
 				FAD08F7628D05E70009C4C8F /* SceneDelegate.swift in Sources */,
+				FA5660F828F4FC2900AB0D67 /* LoginSessionManager.swift in Sources */,
 				FA215D2428D0600A0086A6BB /* SideMenuViewTableCell.swift in Sources */,
 				FA215D2328D0600A0086A6BB /* SideMenuViewController.swift in Sources */,
 				FA215D2128D0600A0086A6BB /* HomeViewCollectionCell.swift in Sources */,
 				FA5660F628F26F2D00AB0D67 /* WriteStoryViewController.swift in Sources */,
 				FA40975728EC0A0F00A640A7 /* WriteMeetingProfileViewController.swift in Sources */,
+				FA5660FC28F5364B00AB0D67 /* StoryDataPostManager.swift in Sources */,
 				FA40975C28ED38AB00A640A7 /* StroyDataManager.swift in Sources */,
 				FA198B7D28D9E41A00A51D10 /* JsonDataManager.swift in Sources */,
 				FA8E913628E5A2D2001805F8 /* CreateMeeingViewController.swift in Sources */,
@@ -677,6 +701,8 @@
 				DEVELOPMENT_TEAM = 6578S57CDT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hoppy/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = StoryUpload;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = StoryUpload;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
@@ -708,6 +734,8 @@
 				DEVELOPMENT_TEAM = 6578S57CDT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hoppy/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = StoryUpload;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = StoryUpload;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
