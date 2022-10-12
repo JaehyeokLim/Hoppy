@@ -11,7 +11,7 @@ class LoginDataManager: UIViewController {
     
     func loginDataManagerFunction(id: Int, email: String, profileUrl: String) {
         let semaphore = DispatchSemaphore (value: 0)
-        print("\(id)")
+
         let parameters = "{\n  \"socialId\" : \(id),\n  \"email\" : \"\(email)\",\n  \"profileUrl\" : \"\(profileUrl)\"\n}"
         let postData = parameters.data(using: .utf8)
         var request = URLRequest(url: URL(string: "http://hoppy.r-e.kr/api/login/kakao")!,timeoutInterval: Double.infinity)
@@ -28,7 +28,7 @@ class LoginDataManager: UIViewController {
           }
           
             let tokenData = String(data: data, encoding: .utf8)!
-            print("TokenData: \(tokenData)")
+            print("TokenData: \(tokenData)\n\n")
             let tokenItem = TokenModel(token: tokenData)
             TokenList.append(tokenItem)
             
@@ -39,7 +39,3 @@ class LoginDataManager: UIViewController {
         semaphore.wait()
     }
 }
-
-//KaZTjCQ64p4bvWX1i5awm0cSCkWcGk5aN70OGeM9Cj102wAAAYPHZFsn
-//2427802414
-//https://k.kakaocdn.net/dn/cuJmPH/btrN5aPfBcp/xoNomBQOE8HQbxYU5hUnVK/img_110x110.jpg

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//request.setValue("Basic \(encoded)", forHTTPHeaderField: "Authorization")
+
 class StoryDataPostManager: UIViewController {
     
     func storyDataPostFunction(title: String, content: String, token: String) {

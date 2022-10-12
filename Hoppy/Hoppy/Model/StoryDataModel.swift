@@ -7,13 +7,7 @@
 
 import UIKit
 
-var StoryTotalDataList = [StoryTotalDataModel]()
 var StoryDetailDataList = [StoryDetailDataModel]()
-
-struct StoryTotalDataModel {
-    let status: Int?
-    let message: String?
-}
 
 struct StoryDetailDataModel {
     let id: Int?

@@ -16,30 +16,30 @@ class PhotoAuthorityManager: UIViewController {
     
     func checkAlbumPermission(){
             PHPhotoLibrary.requestAuthorization( { status in
-                switch status {
-                case .authorized:
-                    print("Album: 권한 허용")
-                    
-                case .denied:
-                    print("Album: 권한 거부")
-                    
-                case .restricted, .notDetermined:
-                    print("Album: 선택하지 않음")
-                    
-                default:
-                    break
-                }
+//                switch status {
+//                case .authorized:
+//                    print("Album: 권한 허용")
+//                    
+//                case .denied:
+//                    print("Album: 권한 거부")
+//                    
+//                case .restricted, .notDetermined:
+//                    print("Album: 선택하지 않음")
+//                    
+//                default:
+//                    break
+//                }
             })
     }
     
     func checkCameraPermission(){
            AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
-               if granted {
-                   print("Camera: 권한 허용")
-                   
-               } else {
-                   print("Camera: 권한 거부")
-               }
+//               if granted {
+//                   print("Camera: 권한 허용")
+//
+//               } else {
+//                   print("Camera: 권한 거부")
+//               }
            })
     }
 }

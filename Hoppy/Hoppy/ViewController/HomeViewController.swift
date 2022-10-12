@@ -571,39 +571,26 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-//extension UIView {
-//    func setViewShadow(backView: UIView) {
-//        backView.layer.masksToBounds = true
-//        backView.layer.cornerRadius = 10
-//        backView.layer.borderWidth = 1
-//
-//        layer.masksToBounds = false
-//        layer.shadowOpacity = 0.8
-//        layer.shadowOffset = CGSize(width: -2, height: 2)
-//        layer.shadowRadius = 3
-//    }
-//}
-
 extension HomeViewController: SideMenuNavigationControllerDelegate {
     
     func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
         self.view.mask = UIView(frame: view.frame)
         self.view.mask?.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        print("SideMenu Appearing! (animated: \(animated))")
+//        print("SideMenu Appearing! (animated: \(animated))")
     }
 
     func sideMenuDidAppear(menu: SideMenuNavigationController, animated: Bool) {
-        print("SideMenu Appeared! (animated: \(animated))")
+//        print("SideMenu Appeared! (animated: \(animated))")
     }
 
     func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
         self.view.mask = UIView(frame: view.frame)
         self.view.mask?.backgroundColor = UIColor.black.withAlphaComponent(1)
-        print("SideMenu Disappearing! (animated: \(animated))")
+//        print("SideMenu Disappearing! (animated: \(animated))")
     }
 
     func sideMenuDidDisappear(menu: SideMenuNavigationController, animated: Bool) {
-        print("SideMenu Disappeared! (animated: \(animated))")
+//        print("SideMenu Disappeared! (animated: \(animated))")
     }
 }
 

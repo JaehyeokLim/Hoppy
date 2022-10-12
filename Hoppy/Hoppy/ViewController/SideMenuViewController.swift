@@ -66,12 +66,6 @@ class SideMenuViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        if items[0] == "로그인" {
-//            kakaoUserLoginTotalFunction()
-        } else {
-            print("이미 로그인이 되어있습니다")
-        }
     }
     
     private func SideMenuViewLayout() {
@@ -190,31 +184,26 @@ class SideMenuViewController: UIViewController {
         UserApi.shared.me() {(user, error) in
             if let error = error {
                 print(error)
-            }
-            else {
-                print("me() success.")
                 
-                //do something
-                let info = user
-                print(info!)
+            } else {
+                print("KakaoSDK: Data Load success.\n")
                 
                 if let id = user?.id {
-                    if let name = user?.kakaoAccount?.profile?.nickname {
-                        if let mail = user?.kakaoAccount?.email {
-                            if let profile = user?.kakaoAccount?.profile?.thumbnailImageUrl {
-                                self.userProfileName.text = name + "\n님"
-                                self.userProfileName.font = UIFont.boldSystemFont(ofSize: 18)
-                                self.userProfileSubLabel.isHidden = false
-                                self.items = ["로그아웃", "마이페이지", "회원탈퇴"]
-                                
-                                let profileUrl = profile.absoluteString
-                                
-                                print("id: \(id)\n이름: \(name)\n이메일: \(mail)\n프로필: \(profileUrl)")
-                                
-                                LoginDataManager().loginDataManagerFunction(id: Int(id), email: mail, profileUrl: profileUrl)
-                                
-                                self.tableView.reloadData()
-                            }
+                    if let mail = user?.kakaoAccount?.email {
+                        if let profile = user?.kakaoAccount?.profile?.thumbnailImageUrl {
+                            let profileUrl = profile.absoluteString
+                            
+                            LoginDataManager().loginDataManagerFunction(id: Int(id), email: mail, profileUrl: profileUrl)
+                            ProfileDataLoadManager().profileDataLoadManagerFunction(token: TokenList[0].token!)
+                            
+                            self.userProfileName.text = ProfileDetailInfoInDataList[0].username! + " 님"
+                            self.userProfileName.font = UIFont.boldSystemFont(ofSize: 18)
+                            self.userProfileSubLabel.isHidden = false
+                            self.items = ["로그아웃", "마이페이지", "회원탈퇴"]
+                            
+                            self.tableView.reloadData()
+                            
+                            print("Hoppy Application: Application Login & Profile Data Update(Load) Complete.")
                         }
                     }
                 }
@@ -232,7 +221,6 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuViewTableCell", for: indexPath) as! SideMenuViewTableCell
         
-//        cell.sideMenuItem.text = items[indexPath.row]
         cell.sideMenuItem.setTitle(items[indexPath.row], for: .normal)
         
         return cell
